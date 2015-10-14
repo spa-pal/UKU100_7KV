@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=GND Pin=C8-1
+Removed Pin From Net: NetName=GND Pin=C18-1
+Removed Pin From Net: NetName=P0_4 Pin=R45-1
+Removed Pin From Net: NetName=P0_6 Pin=R49-1
+Removed Pin From Net: NetName=LO5 Pin=U12-1
+Removed Pin From Net: NetName=NetR27_2 Pin=U12-2
+Removed Pin From Net: NetName=GND Pin=U12-4
+Removed Pin From Net: NetName=NetR27_2 Pin=U12-6
+Removed Pin From Net: NetName=LO6 Pin=U12-7
+Removed Pin From Net: NetName=+5V Pin=U12-8

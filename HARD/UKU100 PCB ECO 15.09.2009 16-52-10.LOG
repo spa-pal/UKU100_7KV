@@ -1,0 +1,182 @@
+Removed Pin From Net: NetName=GND Pin=BT1-2
+Removed Pin From Net: NetName=+5V Pin=D7-1
+Removed Pin From Net: NetName=P0_3 Pin=R74-1
+Removed Pin From Net: NetName=+5V Pin=R74-2
+Removed Pin From Net: NetName=P0_2 Pin=R75-1
+Removed Pin From Net: NetName=+5V Pin=R75-2
+Removed Pin From Net: NetName=GND Pin=U21-4
+Removed Pin From Net: NetName=P0_3 Pin=U21-5
+Removed Pin From Net: NetName=P0_2 Pin=U21-6
+Removed Member From Class: ClassName=IBPV11 Member=BT1
+Removed Member From Class: ClassName=IBPV11 Member=D6
+Removed Member From Class: ClassName=IBPV11 Member=D6
+Removed Member From Class: ClassName=IBPV11 Member=D7
+Removed Member From Class: ClassName=IBPV11 Member=R74
+Removed Member From Class: ClassName=IBPV11 Member=R75
+Removed Member From Class: ClassName=IBPV11 Member=U21
+Removed Member From Class: ClassName=IBPV11 Member=Y2
+Change Component Comment : Designator=C30 Old Comment= New Comment=1.0
+Change Component Comment : Designator=C29 Old Comment= New Comment=1.0
+Change Component Comment : Designator=C28 Old Comment= New Comment=1.0
+Change Component Comment : Designator=C27 Old Comment= New Comment=1.0
+Change Component Comment : Designator=C26 Old Comment= New Comment=1.0
+Change Component Comment : Designator=U1 Old Comment= New Comment=LPC2129FBD64
+Change Component Comment : Designator=S5 Old Comment= New Comment=SWT-9
+Change Component Comment : Designator=S4 Old Comment= New Comment=SWT-9
+Change Component Comment : Designator=S3 Old Comment= New Comment=SWT-9
+Change Component Comment : Designator=S2 Old Comment= New Comment=SWT-9
+Change Component Comment : Designator=S1 Old Comment= New Comment=SWT-9
+Change Component Comment : Designator=D106 Old Comment=11BQ10 New Comment=10BQ060
+Change Component Comment : Designator=D105 Old Comment=11BQ10 New Comment=10BQ060
+Change Component Comment : Designator=D104 Old Comment=11BQ10 New Comment=10BQ060
+Change Component Comment : Designator=D103 Old Comment=11BQ10 New Comment=10BQ060
+Change Component Comment : Designator=D102 Old Comment=11BQ10 New Comment=10BQ060
+Change Component Comment : Designator=D101 Old Comment=11BQ10 New Comment=10BQ060
+Change Component Comment : Designator=D100 Old Comment=11BQ10 New Comment=10BQ060
+Change Component Comment : Designator=D4 Old Comment=11BQ10 New Comment=10BQ060
+Change Component Comment : Designator=D3 Old Comment=11BQ10 New Comment=10BQ060
+Change Component Comment : Designator=Q5 Old Comment=BC847 New Comment=BC846
+Change Component Comment : Designator=Q3 Old Comment=BC847 New Comment=BC846
+Change Component Comment : Designator=C108 Old Comment=Cap Pol1 New Comment=10.0x25 tantal
+Change Component Comment : Designator=C107 Old Comment=Cap Pol1 New Comment=10.0x25 tantal
+Change Component Comment : Designator=C105 Old Comment=Cap Pol1 New Comment=10.0x25 tantal
+Change Component Comment : Designator=C104 Old Comment=Cap Pol1 New Comment=10.0x25 tantal
+Change Component Comment : Designator=C102 Old Comment=Cap Pol1 New Comment=10.0x25 tantal
+Change Component Comment : Designator=C13 Old Comment=Cap Pol1 New Comment=10.0x25 tantal
+Change Component Comment : Designator=C12 Old Comment=Cap Pol1 New Comment=10.0x25 tantal
+Change Component Comment : Designator=C100 Old Comment=Cap Pol1 New Comment=22.0x50
+Change Component Comment : Designator=C19 Old Comment=Cap Pol1 New Comment=22.0x50
+Change Component Comment : Designator=C101 Old Comment=Cap Pol1 New Comment=220.0x25
+Change Component Comment : Designator=C106 Old Comment=Cap Pol1 New Comment=220.0x63
+Change Component Comment : Designator=C103 Old Comment=Cap Pol1 New Comment=220.0x63
+Change Component Comment : Designator=C22 Old Comment=Cap Pol3 New Comment=10.0x25 tantal
+Change Component Comment : Designator=C20 Old Comment=Cap Pol3 New Comment=10.0x25 tantal
+Change Component Comment : Designator=C111 Old Comment=Cap Semi New Comment=0.1
+Change Component Comment : Designator=C109 Old Comment=Cap Semi New Comment=0.1
+Change Component Comment : Designator=C33 Old Comment=Cap Semi New Comment=0.1
+Change Component Comment : Designator=C32 Old Comment=Cap Semi New Comment=0.1
+Change Component Comment : Designator=C17 Old Comment=Cap Semi New Comment=0.1
+Change Component Comment : Designator=C16 Old Comment=Cap Semi New Comment=0.1
+Change Component Comment : Designator=C15 Old Comment=Cap Semi New Comment=0.1
+Change Component Comment : Designator=C14 Old Comment=Cap Semi New Comment=0.1
+Change Component Comment : Designator=C54 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C36 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C34 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C24 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C23 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C18 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C11 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C10 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C9 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C8 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C7 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C6 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C5 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C4 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C3 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C2 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C1 Old Comment=Cap Semi New Comment=1.0
+Change Component Comment : Designator=C117 Old Comment=Cap Semi New Comment=1n0x1000
+Change Component Comment : Designator=C114 Old Comment=Cap Semi New Comment=1n0x1000
+Change Component Comment : Designator=C53 Old Comment=Cap Semi New Comment=15pF
+Change Component Comment : Designator=C50 Old Comment=Cap Semi New Comment=15pF
+Change Component Comment : Designator=C31 Old Comment=Cap Semi New Comment=15pF
+Change Component Comment : Designator=C21 Old Comment=Cap Semi New Comment=15pF
+Change Component Comment : Designator=J2 Old Comment=D Connector 9 New Comment=DBS-9M
+Change Component Comment : Designator=J1 Old Comment=D Connector 9 New Comment=DBS-9M
+Change Component Comment : Designator=FU100 Old Comment=FUSE New Comment=5.0A
+Change Component Comment : Designator=JP14 Old Comment=Header 2 New Comment=PLS-2
+Change Component Comment : Designator=JP10 Old Comment=Header 3 New Comment=PLS-3
+Change Component Comment : Designator=JP5 Old Comment=Header 3 New Comment=PLS-3
+Change Component Comment : Designator=JP4 Old Comment=Header 3 New Comment=PLS-3
+Change Component Comment : Designator=JP13 Old Comment=Header 4 New Comment=TJ3-4P4C
+Change Component Comment : Designator=JP12 Old Comment=Header 4 New Comment=TJ3-4P4C
+Change Component Comment : Designator=JP3 Old Comment=Header 5 New Comment=PLS-5
+Change Component Comment : Designator=JP2 Old Comment=Header 5 New Comment=PLS-5
+Change Component Comment : Designator=JP11 Old Comment=Header 5X2 New Comment=IDC10
+Change Component Comment : Designator=JP7 Old Comment=Header 5X2 New Comment=IDC10
+Change Component Comment : Designator=JP9 Old Comment=Header 14H New Comment=IDC14
+Change Component Comment : Designator=JP6 Old Comment=Header 20 New Comment=PBD20
+Change Component Comment : Designator=JP8 Old Comment=Header 20 New Comment=PLHD20
+Change Component Comment : Designator=L102 Old Comment=Inductor Konstr 2 New Comment=SDR0805-390KL
+Change Component Comment : Designator=L101 Old Comment=Inductor Konstr 2 New Comment=SDR0805-390KL
+Change Component Comment : Designator=L100 Old Comment=Inductor Konstr 2 New Comment=SDR0805-390KL
+Change Component Comment : Designator=L1 Old Comment=Inductor Konstr 2 New Comment=SDR0805-390KL
+Change Component Comment : Designator=JP1 Old Comment=MHDR2X13 New Comment=IDC-26
+Change Component Comment : Designator=A1 Old Comment=PJEZO New Comment=EFM-260
+Change Component Comment : Designator=R97 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R63 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R53 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R52 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R47 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R46 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R34 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R28 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R22 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R20 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R16 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R14 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R12 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R10 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R8 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R6 Old Comment=Res2 New Comment=1K0
+Change Component Comment : Designator=R26 Old Comment=Res2 New Comment=1M0
+Change Component Comment : Designator=R90 Old Comment=Res2 New Comment=2K2
+Change Component Comment : Designator=R73 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R72 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R64 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R57 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R38 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R27 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R24 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R5 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R4 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R3 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R2 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R1 Old Comment=Res2 New Comment=2K7
+Change Component Comment : Designator=R102 Old Comment=Res2 New Comment=7K5
+Change Component Comment : Designator=R101 Old Comment=Res2 New Comment=7K5
+Change Component Comment : Designator=R100 Old Comment=Res2 New Comment=7K5
+Change Component Comment : Designator=R89 Old Comment=Res2 New Comment=7K5
+Change Component Comment : Designator=R82 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R81 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R80 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R79 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R65 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R56 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R49 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R45 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R42 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R36 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R35 Old Comment=Res2 New Comment=10K
+Change Component Comment : Designator=R44 Old Comment=Res2 New Comment=10R
+Change Component Comment : Designator=R39 Old Comment=Res2 New Comment=10R
+Change Component Comment : Designator=R37 Old Comment=Res2 New Comment=10R
+Change Component Comment : Designator=R33 Old Comment=Res2 New Comment=10R
+Change Component Comment : Designator=R32 Old Comment=Res2 New Comment=10R
+Change Component Comment : Designator=R31 Old Comment=Res2 New Comment=10R
+Change Component Comment : Designator=R30 Old Comment=Res2 New Comment=10R
+Change Component Comment : Designator=R29 Old Comment=Res2 New Comment=10R
+Change Component Comment : Designator=R105 Old Comment=Res2 New Comment=15K
+Change Component Comment : Designator=R109 Old Comment=Res2 New Comment=20K
+Change Component Comment : Designator=R103 Old Comment=Res2 New Comment=20K
+Change Component Comment : Designator=R110 Old Comment=Res2 New Comment=22R
+Change Component Comment : Designator=R104 Old Comment=Res2 New Comment=22R
+Change Component Comment : Designator=R108 Old Comment=Res2 New Comment=30R
+Change Component Comment : Designator=R107 Old Comment=Res2 New Comment=30R
+Change Component Comment : Designator=R106 Old Comment=Res2 New Comment=30R
+Change Component Comment : Designator=R21 Old Comment=Res2 New Comment=33K
+Change Component Comment : Designator=R17 Old Comment=Res2 New Comment=33K
+Change Component Comment : Designator=R13 Old Comment=Res2 New Comment=33K
+Change Component Comment : Designator=R9 Old Comment=Res2 New Comment=33K
+Change Component Comment : Designator=R7 Old Comment=Res2 New Comment=33K
+Change Component Comment : Designator=R41 Old Comment=Res2 New Comment=K10
+Change Component Comment : Designator=R40 Old Comment=Res2 New Comment=K10
+Change Component Comment : Designator=R19 Old Comment=Res2 New Comment=K10
+Change Component Comment : Designator=R18 Old Comment=Res2 New Comment=K10
+Change Component Comment : Designator=R15 Old Comment=Res2 New Comment=K10
+Change Component Comment : Designator=R11 Old Comment=Res2 New Comment=K10
+Change Component Comment : Designator=R48 Old Comment=Res2 New Comment=K20
+Change Component Comment : Designator=R43 Old Comment=Res2 New Comment=K20
+Change Component Comment : Designator=R25 Old Comment=Res2 New Comment=K30
+Change Component Comment : Designator=R23 Old Comment=Res2 New Comment=K30

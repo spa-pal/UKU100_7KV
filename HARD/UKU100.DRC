@@ -1,0 +1,70 @@
+Protel Design System Design Rule Check
+PCB File : \Users\Pal\DEVICES\UKU100\HARD\UKU100.PcbDoc
+Date     : 24.08.2009
+Time     : 0:27:59
+
+WARNING: Unplated multi-layer pad(s) detected
+   Pad T100-7(117.4999mm,22.4mm)  Multi-Layer on Net NetD105_1
+Total: 1
+
+Processing Rule : Clearance Constraint (Gap=0.25mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.3mm) (InComponent(JP1) or InComponent(U2)),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.6mm) (InNet('+UOUT') or
+InNet('U1') or
+InNet('U2') or
+InNet('UAKB') or
+InNet('-UOUT')),(InPoly)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.4mm) (InPoly),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=1mm) (InPoly),(InPoly)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=2mm) (InPoly),(HasPad('Free-0'))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.7mm) (OnLayer('Keep-Out Layer')),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Broken-Net Constraint ( (All) )
+   Violation         Net NetD105_1
+     Warning - net contains unplated pads
+Rule Violations :1
+
+Processing Rule : Width Constraint (Min=0.2mm) (Max=2mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.0254mm) (Max=5mm) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.1mm) (InComponent(U1)or
+InNet(NetC21_2)or
+InNet(NetC31_2)or
+InNet(P0_0)or
+InNet(P0_1)or
+InNet(P0_2)or
+InNet(P0_3)or
+InNet(P0_4)or
+InNet(P0_5)or
+InNet(P0_6)or
+InNet(P0_7)or
+InNet(P0_8)or
+InNet(P0_9)or
+InNet(P0_10)or
+Rule Violations :0
+
+
+Violations Detected : 1
+Time Elapsed        : 00:02:06
