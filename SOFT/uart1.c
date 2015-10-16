@@ -380,6 +380,72 @@ if((UIB1[0]=='Z'))
 				//uart_out1(3,1,2,3,4,5,6);
 				}
 			 */
+
+			if(UIB1[4]=='4')    //Текущее напряжение и ток
+				{
+				char i;
+				plazma++;
+				memo_out0[0]='!';
+				memo_out0[1]=adrh;
+				memo_out0[2]=adrl;
+				memo_out0[3]='4';
+				memo_out0[4]='>';
+				memo_out0[5]='5';
+				//memo_out0[5]='>';
+			/*	i=0;
+				while(name_of_blok[i])
+					{
+					memo_out0[5+i]=name_of_blok[i];
+					i++;
+					}
+				memo_out0[5+i]=0x0d;*/
+				memo_out0[6]='+';
+				memo_out0[7]='0'+ (U/10000);
+				tempSS=U%10000;
+
+				memo_out0[8]='0'+ (tempSS/1000);
+				tempSS=tempSS%1000;
+
+				memo_out0[9]='0'+ (tempSS/100);
+				tempSS=tempSS%100;
+
+				memo_out0[10]='0'+ (tempSS/10);
+				tempSS=tempSS%10;
+
+				memo_out0[11]='0'+ tempSS;
+				
+				tempSL=(signed long)Ires;
+
+
+				memo_out0[12]='+';
+
+				memo_out0[13]='0'+ (char)(tempSL/1000000L);
+				tempSL=tempSL%1000000L;
+				
+				memo_out0[14]='0'+ (char)(tempSL/100000L);
+				tempSL=tempSL%100000L;
+
+				memo_out0[15]='0'+ (char)(tempSL/10000L);
+				tempSL=tempSL%10000L;
+				
+				memo_out0[16]=',';
+				
+				memo_out0[17]='0'+ (char)(tempSL/1000L);
+				tempSL=tempSL%1000L;
+								
+				memo_out0[18]='0'+ (char)(tempSL/100L);
+				tempSL=tempSL%100L;
+
+				memo_out0[19]='0'+ (char)(tempSL/10L);
+				tempSL=tempSL%10L;
+				
+				memo_out0[20]='0'+ (char)tempSL;
+				
+				memo_out0[21]=0x0d;
+
+				uart_out_adr1(memo_out0,21);
+				//uart_out1(3,1,2,3,4,5,6);
+				}
 			}
 
 
