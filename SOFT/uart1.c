@@ -299,87 +299,11 @@ if((UIB1[0]=='Z'))
 				
 				memo_out0[20]=0x0d;
 
-				uart_out_adr1(memo_out0,20);
+				uart_out_adr1(memo_out0,21);
 				//uart_out1(3,1,2,3,4,5,6);
 				}
 
-/*			else if(UIB1[4]=='2') //считывание начального и конечного напряжения
-				{
-				char i;
-				memo_out0[0]='!';
-				memo_out0[1]=adrh;
-				memo_out0[2]=adrl;
-				memo_out0[3]='4';
-				memo_out0[4]='>';
-				memo_out0[5]='2';
 
-				memo_out0[6]='+';
-				memo_out0[7]='0'+ (U1/10000);
-				tempSS=U1%10000;
-
-				memo_out0[8]='0'+ (tempSS/1000);
-				tempSS=tempSS%1000;
-
-				memo_out0[9]='0'+ (tempSS/100);
-				tempSS=tempSS%100;
-
-				memo_out0[10]='0'+ (tempSS/10);
-				tempSS=tempSS%10;
-
-				memo_out0[11]='0'+ tempSS;
-				
-
-				memo_out0[12]='+';
-				memo_out0[13]='0'+ (U2/10000);
-				tempSS=U2%10000;
-
-				memo_out0[14]='0'+ (tempSS/1000);
-				tempSS=tempSS%1000;
-
-				memo_out0[15]='0'+ (tempSS/100);
-				tempSS=tempSS%100;
-
-				memo_out0[16]='0'+ (tempSS/10);
-				tempSS=tempSS%10;
-
-				memo_out0[17]='0'+ tempSS;
-
-			
-				memo_out0[18]=0x0d;
-
-				uart_out_adr1(memo_out0,19);
-
-				}*/
-
-/*			else if(UIB1[4]=='3') //считывание длительности процесса
-				{
-				char i;
-				plazma++;
-				memo_out0[0]='!';
-				memo_out0[1]=adrh;
-				memo_out0[2]=adrl;
-				memo_out0[3]='4';
-				memo_out0[4]='>';
-				memo_out0[5]='3';
-
-				memo_out0[6]='+';
-				memo_out0[7]='0'+ (T/100);
-				tempSS=T%100;
-
-				memo_out0[8]='0'+ (tempSS/10);
-				tempSS=tempSS%10;
-
-				memo_out0[9]='0'+ tempSS;
-
-                    memo_out0[10]='+';
-				memo_out0[11]='0';
-				
-				memo_out0[12]=0x0d;
-
-				uart_out_adr1(memo_out0,13);
-				//uart_out1(3,1,2,3,4,5,6);
-				}
-			 */
 
 			if(UIB1[4]=='4')    //Текущее напряжение и ток
 				{
