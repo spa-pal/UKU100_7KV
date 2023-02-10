@@ -212,6 +212,7 @@ char plazma_plazma;
 char plazma_ind;
 char plazma;
 char cnt_lcd_init;
+char plazma_pal;
 
 //-----------------------------------------------
 //Контроль вакуума   
@@ -635,7 +636,9 @@ else if(ind==iMn)
 			}
 		else sub_bgnd("выкл.",'#',-3);
 		//int2lcdyx(sub_ind,0,10,0);
-		//int2lcdyx(index_set,0,15,0);
+		int2lcdyx(plazma_pal,0,3,0);
+		int2lcdyx(plazma_plazma,0,8,0);
+		long2lcdhyx(but_n,2,10);
 		
 		}
 		
@@ -1172,7 +1175,7 @@ if(bFL5)
 //-----------------------------------------------
 void but_drv(void)
 {
-
+plazma_plazma++;
 but_n=IO1PIN|(0xFFFFFFFFUL&(~(1UL<<BUT0))&(~(1UL<<BUT1))&(~(1UL<<BUT2))&(~(1UL<<BUT3))&(~(1UL<<BUT4)));
 if((but_n==0xffffffffUL)||(but_n!=but_s))
  	{
@@ -1229,6 +1232,7 @@ PINSEL2&=~(1UL<<((BUT0-16)*2))&~(1UL<<(((BUT0-16)*2)+1))
 	   &~(1UL<<((BUT3-16)*2))&~(1UL<<(((BUT3-16)*2)+1))
 	   &~(1UL<<((BUT4-16)*2))&~(1UL<<(((BUT4-16)*2)+1));
 IO1DIR&=~(1UL<<BUT0)&~(1UL<<BUT1)&~(1UL<<BUT2)&~(1UL<<BUT3)&~(1UL<<BUT4);
+but_n=plazma_plazma;
 	   
 }
 
@@ -1324,7 +1328,7 @@ else if(ind==iMn)
 			{
 			if(but==butE)
 				{
-				plazma_plazma=1;
+				//plazma_plazma=1;
 				wrk_state=wrkON;
 				pwmI_start=POWER*9;
 				wrk_cnt_cnt=(signed long)T_WRK_MAX*300L;
@@ -1697,7 +1701,7 @@ else if(ind==iSet)
 	     else if(but==butL)T_SIGN--;
 	     else if(but==butL_)T_SIGN-=10;
 		else if(but==butLR)T_SIGN=50;
-	     gran(&T_SIGN,30,70);
+	     gran(&T_SIGN,30,110);
 	     lc640_write_int(EE_T_SIGN,T_SIGN);
 	     speed=1;
 	     }
@@ -1709,7 +1713,7 @@ else if(ind==iSet)
 	     else if(but==butL)T_MAX--;
 	     else if(but==butL_)T_MAX-=10;
 		else if(but==butLR)T_MAX=70;
-	     gran(&T_MAX,30,80);
+	     gran(&T_MAX,30,120);
 	     lc640_write_int(EE_T_MAX,T_MAX);
 	     speed=1;
 	     }
@@ -2427,6 +2431,8 @@ for(;;)
 		{
 		b1Hz=0;
 		
+		plazma_pal++;
+
 		lc640_write_int(EE_DEBUG,lc640_read_int(EE_DEBUG)+1);
 		
 		ret_ind_sec_hndl();  

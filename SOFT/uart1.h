@@ -28,6 +28,7 @@ extern char usart1_router_cnt;
 extern char _485_last_cnt;
 extern char UIB[30];
 extern char tx_wd_cnt;
+extern short plazma_ppp;
 
 void putchar1(char c);
 void uart_out1 (char num,char data0,char data1,char data2,char data3,char data4,char data5);

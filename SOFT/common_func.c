@@ -669,7 +669,7 @@ sub_ind+=offset_sub_ind;
 //-----------------------------------------------
 void pointer_set(char num_of_first_row)
 {
-if(sub_ind==index_set)lcd_buffer[num_of_first_row*20]=1;
+if(sub_ind==index_set)lcd_buffer[num_of_first_row*20]=1; 
 else if(sub_ind==(index_set+1))lcd_buffer[(num_of_first_row+1)*20]=1;
 else if(sub_ind==(index_set+2))lcd_buffer[(num_of_first_row+2)*20]=1;
 else if(sub_ind==(index_set+3))lcd_buffer[(num_of_first_row+3)*20]=1;
