@@ -7,6 +7,8 @@
 #include "gran.h"
 #include "common_func.h"
 #include <string.h>
+//#include <stdio.h>
+#include <stdlib.h>
 
 
 char bRXIN1;
@@ -85,7 +87,7 @@ for (i=0;i<num+3;i++)
 void uart_out_adr1 (char *ptr, char len)
 {
 char UOB[110]/*={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}*/;
-char i,t=0;
+char i/*,t=0*/;
 
 for(i=0;i<len;i++)
 	{
@@ -145,11 +147,11 @@ return data;
 //***********************************************
 __irq void uart1_interrupt(void)
 {
-char status,u1iir,data;
+char /*status,*/u1iir,data;
 
 //plazma++;
 
-status=U1LSR;
+//status=U1LSR;
 u1iir=U1IIR;
    	
 if((u1iir&0x0f)==4)
@@ -215,7 +217,7 @@ if((UIB1[0]=='Z'))
 			{
 			if(UIB1[4]=='N')
 				{
-				char i;
+//				char i;
 				plazma++;
 				memo_out0[0]='!';
 				memo_out0[1]=adrh;
@@ -239,12 +241,12 @@ if((UIB1[0]=='Z'))
 			{
 			signed short tempSS;
 			signed long tempSL;
-			char temp;
+			//char temp;
 			//memo_out0[5]=0x0d;
 			//uart_out_adr1(memo_out0,6);
 			if(UIB1[4]=='1')    //“екущее напр€жение и ток
 				{
-				char i;
+//				char i;
 				plazma++;
 				memo_out0[0]='!';
 				memo_out0[1]=adrh;
@@ -309,7 +311,7 @@ if((UIB1[0]=='Z'))
 
 			if(UIB1[4]=='4')    //“екущее напр€жение и ток
 				{
-				char i;
+//				char i;
 				plazma++;
 				memo_out0[0]='!';
 				memo_out0[1]=adrh;
@@ -377,8 +379,8 @@ if((UIB1[0]=='Z'))
 	 	else if(UIB1[3]=='3')         //установка параметра
 			{
 			signed short tempSS;
-			char temp;
-			unsigned char *s;
+//			char temp;
+//			unsigned char *s;
 
 			if(UIB1[4]=='1')         //первый канал
 				{
@@ -508,7 +510,7 @@ if((UIB1[0]=='Z'))
 			{
 			if(UIB1[4]=='E')
 				{
-				char i;
+//				char i;
 
 				wrk_state=wrkON;
 				lc640_write_int(EE_WRK_STAT,wrk_state);
@@ -525,7 +527,7 @@ if((UIB1[0]=='Z'))
 
 			else if(UIB1[4]=='D')
 				{
-				char i;
+//				char i;
 
 				wrk_state=wrkOFF;
 				lc640_write_int(EE_WRK_STAT,wrk_state);

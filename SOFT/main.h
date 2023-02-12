@@ -142,6 +142,7 @@ extern signed short T_POV;
 extern signed short R_DOP;
 extern signed short KOEF;
 extern signed short BAUDRATE;
+extern signed short MODBUS_TYPE;
 
 //-----------------------------------------------
 //Индикация

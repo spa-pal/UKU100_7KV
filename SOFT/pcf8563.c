@@ -25,23 +25,25 @@ signed char year_bcd;
 //-----------------------------------------------
 void i2c_init_soft(void)
 {
-if(SDA__<16)
+#if(SDA__<16)
 	{
 	PINSEL0&=~(1<<(SDA__*2))&~(1<<((SDA__*2)+1));
 	}
-else 	
+#else 	
 	{
 	PINSEL1&=~(1<<((SDA__-16)*2))&~(1<<(((SDA__-16)*2)+1));
 	}
+#endif
 
-if(SCL__<16)
+#if(SCL__<16)
 	{
 	PINSEL0&=~(1<<(SCL__*2))&~(1<<((SCL__*2)+1));
 	}
-else 	
+#else 	
 	{
 	PINSEL1&=~(1<<((SCL__-16)*2))&~(1<<(((SCL__-16)*2)+1));
 	}
+#endif
 	
 IO0DIR&=~((1UL<<SDA__)||(1UL<<SCL__));	
 IO0CLR=(1UL<<SDA__)||(1UL<<SCL__);

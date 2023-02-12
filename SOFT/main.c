@@ -69,6 +69,7 @@ signed short T_POV;
 signed short R_DOP;
 signed short KOEF;
 signed short BAUDRATE;
+signed short MODBUS_TYPE;
 
 //-----------------------------------------------
 //Индикация
@@ -230,7 +231,7 @@ void bitmap_hndl(void)
 {
 short x,ii,i,y;
 unsigned int ptr_bitmap;
-static char ptr_cnt,ptr_cnt1,ptr_cnt2,ptr_cnt3;
+/*static char ptr_cnt,ptr_cnt1,ptr_cnt2,ptr_cnt3;*/
 for(ii=0;ii<488;ii++)
 	{
 	lcd_bitmap[ii]=0x00;
@@ -636,9 +637,9 @@ else if(ind==iMn)
 			}
 		else sub_bgnd("выкл.",'#',-3);
 		//int2lcdyx(sub_ind,0,10,0);
-		int2lcdyx(plazma_pal,0,3,0);
-		int2lcdyx(plazma_plazma,0,8,0);
-		long2lcdhyx(but_n,2,10);
+		//int2lcdyx(plazma_pal,0,3,0);
+		//int2lcdyx(plazma_plazma,0,8,0);
+		//long2lcdhyx(but_n,2,10);
 		
 		}
 		
@@ -812,27 +813,32 @@ else if(ind==iSet)
 	ptrs[7]=		" tминим1         Zc.";
 	ptrs[8]=		" Uмин2           [В ";
 	ptrs[9]=		" tминим2         ]c.";
-	if(I_VK>100) ptrs[10]=		" Iконтр.вак.    <mA ";
-	else ptrs[10]=		" Iконтр.вак.    <mkA";
-	ptrs[11]=		" Адрес           >h ";
-    	ptrs[12]=		" Индикация Pmax   ^ ";
-	if(image_W==1)
-	ptrs[13]=		" Pпов.            {%";
+	if(I_VK>100) 
+	ptrs[10]=		" Iконтр.вак.    <mA ";
 	else 
-	ptrs[13]=		" Pпов.          {Вт.";
-	ptrs[14]=		" Tпов.         }мин.";
-	ptrs[15]=		" Автоблок.клавиатуры";
-     ptrs[16]=		" Rдоп.         qМом ";
+	ptrs[10]=		" Iконтр.вак.    <mkA";
+	ptrs[11]=		" Индикация Pmax   ^ ";
+	if(image_W==1)
+	ptrs[12]=		" Pпов.            {%";
+	else 
+	ptrs[12]=		" Pпов.          {Вт.";
+	ptrs[13]=		" Tпов.         }мин.";
+	ptrs[14]=		" Автоблок.клавиатуры";
+    ptrs[15]=		" Rдоп.         qМом ";
+	ptrs[16]=		" MODBUS       ASCII ";
+	if(MODBUS_TYPE==1)
+	ptrs[16]=		" MODBUS         RTU ";
+	ptrs[17]=		" MODBUS BAUDRATE    "; 
+	ptrs[18]=		"                 Y00";
+	ptrs[19]=		" MODBUS ADDRESS  >h ";
 	if(MODE==_7_200_)
 	{
-	ptrs[17]=		" Коэффициент      Q ";
-	ptrs[18]=		" Baudrate        Y00";
-	ptrs[19]=		" Выход              ";
+	ptrs[20]=		" Коэффициент      Q ";
+	ptrs[21]=		" Выход              ";
 	}
 	else
 	{
-	ptrs[17]=		" Baudrate        Y00";
-    	ptrs[18]=		" Выход              ";
+	ptrs[20]=		" Выход              ";
 	}
 	if((sub_ind-index_set)>2)index_set=sub_ind-2;
 	else if(sub_ind<index_set)index_set=sub_ind;
@@ -1240,7 +1246,7 @@ but_n=plazma_plazma;
 void but_an(void)
 {
 signed short temp_SS;
-signed int deep,i,cap,ptr;
+signed int deep/*,i*/,cap,ptr;
 char av_head[4];
 
 
@@ -1631,19 +1637,22 @@ else if(ind==iSet)
 	if(but==butD)
 		{
 		sub_ind++;
-		if(MODE==_7_200_)gran_char(&sub_ind,0,19);
-		else gran_char(&sub_ind,0,18);
+		if(sub_ind==17)index_set=17;
+		if(sub_ind==18)sub_ind++;
+		if(MODE==_7_200_)gran_char(&sub_ind,0,21);
+		else gran_char(&sub_ind,0,20);
 		}
 	else if(but==butU)
 		{
 		sub_ind--;
-		if(MODE==_7_200_)gran_char(&sub_ind,0,19);
-		else gran_char(&sub_ind,0,18);
+		if(sub_ind==18)sub_ind--;
+		if(MODE==_7_200_)gran_char(&sub_ind,0,21);
+		else gran_char(&sub_ind,0,20);
 		}
 	else if(but==butD_)
 		{
-		if(MODE==_7_200_)sub_ind=18;
-		else sub_ind=17;
+		if(MODE==_7_200_)sub_ind=20;
+		else sub_ind=19;
 		}
 
 	else if(sub_ind==0)
@@ -1805,18 +1814,8 @@ else if(ind==iSet)
 	     speed=1;
 	     }
 
+
 	else if(sub_ind==11)
-	     {
-		if(but==butR)ADR++;
-	     else if(but==butR_)ADR+=10;
-	     else if(but==butL)ADR--;
-	     else if(but==butL_)ADR-=10;
-	     gran(&ADR,16,80);
-	     lc640_write_int(EE_ADR,ADR);
-	     speed=1;
-	     }
-	
-	else if(sub_ind==12)
 	     {
 		if(but==butL)image_W=1;			 //отображение в %
 	     else if(but==butR)				 //отображение в Вт
@@ -1829,7 +1828,7 @@ else if(ind==iSet)
 	     }
 		 lc640_write_int(EE_image_W,image_W);
 		 }
-	else if(sub_ind==13)
+	else if(sub_ind==12)
 	     {
 		if(but==butR)P_POV++;
 	     else if(but==butR_)P_POV+=10;
@@ -1839,7 +1838,7 @@ else if(ind==iSet)
 	     lc640_write_int(EE_P_POV,P_POV);
 	     speed=1;
 	     }
-	else if(sub_ind==14)
+	else if(sub_ind==13)
 	     {
 		if(but==butR)T_POV=((T_POV/5)+1)*5;
 	     else if(but==butR_)T_POV=((T_POV/5)+2)*5;
@@ -1850,7 +1849,7 @@ else if(ind==iSet)
 	     speed=1;
 	     }
 		
-	else if(sub_ind==15)
+	else if(sub_ind==14)
 	     {
 			if(but==butE)
 			{
@@ -1859,7 +1858,7 @@ else if(ind==iSet)
 			}
 		 }
 
-	else if(sub_ind==16)
+	else if(sub_ind==15)
 	     {
 		if(but==butR)R_DOP++;
 	     else if(but==butR_)R_DOP++;
@@ -1870,16 +1869,20 @@ else if(ind==iSet)
 	     speed=1;
 	     }
 
-	else if((MODE==_7_200_)&&(sub_ind==17))
+ 	else if(sub_ind==16)
 		{
-		if(KOEF)KOEF=0;
-	     else KOEF=1;
-	     
-	     lc640_write_int(EE_KOEF,KOEF);
-	     }
+		if((but==butR)||(but==butR_))
+			{
+			lc640_write_int(EE_MODBUS_TYPE,1);
+			}
+		else if((but==butL)||(but==butL_))
+			{
+			lc640_write_int(EE_MODBUS_TYPE,0);
+			}
+		}
 
-	else if(((MODE==_7_200_)&&(sub_ind==18))||(sub_ind==17))
-	     {
+	else if(sub_ind==17)
+		{
 		if((but==butR)||(but==butR_))
                {
                speed=1;
@@ -1904,10 +1907,26 @@ else if(ind==iSet)
                }
 	     }
 
+  	else if(sub_ind==19)
+	     {
+		if(but==butR)ADR++;
+	     else if(but==butR_)ADR+=10;
+	     else if(but==butL)ADR--;
+	     else if(but==butL_)ADR-=10;
+	     gran(&ADR,1,99);
+	     lc640_write_int(EE_ADR,ADR);
+	     speed=1;
+	     }
+	
+	else if((MODE==_7_200_)&&(sub_ind==20))
+		{
+		if(KOEF)KOEF=0;
+	     else KOEF=1;
+	     
+	     lc640_write_int(EE_KOEF,KOEF);
+	     }
 
-
-
-	else if(((MODE==_7_200_)&&(sub_ind==19))||(sub_ind==18))
+	else if(((MODE==_7_200_)&&(sub_ind==21))||(sub_ind==20))
 	     {
 		if(but==butE)tree_down(0,0);
 	     }	
@@ -2414,7 +2433,7 @@ for(;;)
 
 		ret_ind_hndl();
 		
-	    	time_drv();
+	    time_drv();
 		memo_read();
 		
 		wrk_hndl();

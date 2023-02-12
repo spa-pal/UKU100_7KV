@@ -7,7 +7,7 @@
 void draw(signed short x_b,signed short y_b,signed short x_o,signed short y_o,char inverse)
 {
 unsigned short num_byte;
-signed short byte_offset;
+//signed short byte_offset;
 //unsigned short x_target;
 unsigned short i;
 char num_bite;
@@ -24,7 +24,7 @@ if(x_o)
 	{
 	num_byte=366-(122*(y_b/8))+(x_b);
 	//x_target
-	byte_offset=x_o;
+	//byte_offset=x_o;
 	num_bite=7-(y_b%8);
 	if(x_o>0)
 		{
@@ -175,14 +175,14 @@ else if(ptr==2)
 //-----------------------------------------------
 void plot(signed short x_b,signed short y_b,unsigned long data,signed short len,char inverse)
 {
-unsigned short num_byte;
+//unsigned short num_byte;
 //signed short byte_offset;
 //unsigned short x_target;
-unsigned short i;
-char num_bite;
-unsigned short y_begin,y_bit_begin;
-unsigned short y_target,y_bit_target;
-unsigned long data1,data2;
+//unsigned short i;
+//char num_bite;
+/*unsigned short y_begin,y_bit_begin;	*/
+//unsigned short y_target,y_bit_target;
+unsigned long data1/*,data2*/;
 char data1_0,data1_1,data1_2,data1_3;
 
 data1=0xffffffffUL;
@@ -250,7 +250,7 @@ for(i=0;i<num;i++)
 	
 {	
 signed char i;
-char n;
+//char n;
 char s[10];
 char minus='+';
 char zero_on;
