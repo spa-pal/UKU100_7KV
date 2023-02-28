@@ -786,12 +786,15 @@ int2lcdyx(UIB1[4],2,14,0); */
 	//long2lcdyx_mmm(t_u_min1,2,6,0);
 	//long2lcdyx_mmm(t_u_min2,3,6,0);
 
-	if(	(av_kv_stat==avON) ||
+/*	if(	(av_kv_stat==avON) ||
 	(temper_state!=tsNORM)||
-	((Ires<100000UL)&&(U<200)))lcd_buffer[19]='A';
+	((Ires<100000UL)&&(U<200)))lcd_buffer[19]='A'; */
 
 
-//	int2lcdyx(lc640_read_int(EE_REST_CNT),1,5,0);
+/*	int2lcdyx(modbus_rtu_plazma[0],0,3,0);
+	int2lcdyx(modbus_rtu_plazma[1],0,9,0);
+	int2lcdyx(modbus_rtu_plazma[2],1,3,0);
+	int2lcdyx(modbus_rtu_plazma[3],1,9,0);	*/
 //	int2lcdyx(lc640_read_int(EE_DEBUG),2,5,0);
 	//int2lcdyx(p_pov_cnt,0,2,0); 
     	} 
@@ -2244,20 +2247,35 @@ if (_485_last_cnt)
 	_485_last_cnt--;
 	if(_485_last_cnt==0)
 		{
-		char i;
-		for(i=0;i<rx_counter1;i++)
-			{
-			UIB1[i]=rx_buffer1[i] ;
+		//char i;
+		//for(i=0;i<rx_counter1;i++)
+			//{
+			//UIB1[i]=rx_buffer1[i] ;
 
 			//UIB1[0]=0x34;
-			}
+			//}
 		bRXIN1=1;
 			//plazma++;
-		rx_counter1=0;
-		rx_wr_index1=0;
+		//rx_counter1=0;
+		//rx_wr_index1=0;
 
 		}
 	}
+
+if(modbus_timeout_cnt<6)
+	{
+	modbus_timeout_cnt++;
+	if(modbus_timeout_cnt>=6)
+		{
+		bMODBUS_TIMEOUT=1;
+		}
+	}
+else if (modbus_timeout_cnt>6)
+	{
+	modbus_timeout_cnt=0;
+	bMODBUS_TIMEOUT=0;
+	}
+
 
 VICVectAddr = 0;
 }
@@ -2272,12 +2290,7 @@ SET_REG(T0EMR,1,3,1);
 
 VICVectAddr = 0;
 }
-/*
-//***********************************************
-__irq void can1_rx_interrupt() 
-{
 
-}*/
 
 //===============================================
 //===============================================
@@ -2376,8 +2389,17 @@ for(;;)
 	if(bRXIN1)
 		{
 		bRXIN1=0;
-		uart_in_an1();
-		}		
+		//uart_in_an1();
+		if(MODBUS_TYPE==0)uart_in_an1();
+		//if(MODBUS_TYPE==1)modbus_in();
+		}	
+	if(bMODBUS_TIMEOUT)
+		{
+		bMODBUS_TIMEOUT=0;
+		//uart_in_an1();
+		//if(MODBUS_TYPE==0)uart_in_an1();
+		if(MODBUS_TYPE==1)modbus_in();
+		}			
  	if(b100Hz)
 		{
 		b100Hz=0; 

@@ -7,6 +7,7 @@
 
 #define VIC_UART1 	7
 
+extern char bUART1TX;
 extern char bRXIN1;
 extern char UIB1[20];
 extern char flag1;
@@ -29,6 +30,11 @@ extern char _485_last_cnt;
 extern char UIB[30];
 extern char tx_wd_cnt;
 extern short plazma_ppp;
+
+extern short modbus_rtu_plazma[5];
+
+extern char modbus_timeout_cnt;
+extern char bMODBUS_TIMEOUT;
 
 void putchar1(char c);
 void uart_out1 (char num,char data0,char data1,char data2,char data3,char data4,char data5);
