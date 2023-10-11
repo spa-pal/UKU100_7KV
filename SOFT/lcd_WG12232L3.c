@@ -23,7 +23,7 @@ bitmap_hndl();
 
 for(row=0;row<4;row++)	 //по 4 текстовым строкам
 	{
-	for(col=0;col<15;col++)	 //по 16 8-битным столбикам
+	for(col=0;col<16;col++)	 //по 16 8-битным столбикам
 		{
 		for(row_=0;row_<8;row_++)	 //по каждому из 8 пикселей в строке
 			{
@@ -45,12 +45,25 @@ for(row=0;row<4;row++)	 //по 4 текстовым строкам
 				bh2_plazma[8]=lcd_bitmap[128+3];
 				bh2_plazma[9]=lcd_bitmap[128+4];  */
 				}
-			for(col_=7;col_>=0;col_--)	 //по каждому из 8 пикселей в этом столбике
+			if(col==15)
 				{
-				//ptr=((short)row*128)+((short)col*8)+((short)col_);
-				//if(ptr_==384) lcd_bitmap2[ptr_]|=bit_mask_const[col_];
-				if(lcd_bitmap[ptr]&0x01) lcd_bitmap2[ptr_]|=bit_mask_const[col_];
-				lcd_bitmap[ptr++]>>=1;
+				for(col_=7;col_>=5;col_--)	 //по каждому из 8 пикселей в этом столбике
+					{
+					//ptr=((short)row*128)+((short)col*8)+((short)col_);
+					//if(ptr_==384) lcd_bitmap2[ptr_]|=bit_mask_const[col_];
+					if(lcd_bitmap[ptr]&0x01) lcd_bitmap2[ptr_]|=bit_mask_const[col_];
+					lcd_bitmap[ptr++]>>=1;
+					}
+				}
+			else 
+				{
+				for(col_=7;col_>=0;col_--)	 //по каждому из 8 пикселей в этом столбике
+					{
+					//ptr=((short)row*128)+((short)col*8)+((short)col_);
+					//if(ptr_==384) lcd_bitmap2[ptr_]|=bit_mask_const[col_];
+					if(lcd_bitmap[ptr]&0x01) lcd_bitmap2[ptr_]|=bit_mask_const[col_];
+					lcd_bitmap[ptr++]>>=1;
+					}
 				}
 			}
 		}
