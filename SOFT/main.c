@@ -18,6 +18,7 @@
 #include "watchdog.h"
 #include "ad7705_soft.h"
 #include "uart1.h"
+#include "curr_version.h"
 
 const char*  name_of_blok="ИПС-1200-220В/7кВ-1А";
 
@@ -607,8 +608,9 @@ else if(ind==iMn)
 		else
 		ptrs[1]=	" Мощность        %% ";
 		ptrs[2]=	" Рестарт          # ";
-		ptrs[3]=	" Установки          ";
-	     ptrs[4]=	" Калибровки         ";
+		ptrs[3]=	" Версия ПО          ";
+		ptrs[4]=	" Установки          ";
+	    ptrs[5]=	" Калибровки         ";
 
 
 		if((sub_ind-index_set)>3)index_set=sub_ind-3;
@@ -1141,6 +1143,25 @@ else if(ind==iSTOP_umin2)
 
 	}
 
+else if(ind==iFWabout)
+	{
+	bgnd_par(	" Версия             ",
+				" Сборка  0000.00.00 ",
+				#ifdef WG12232A
+				//" WG12232A           ",
+				"                    ",
+				#endif
+				#ifdef WG12232L3
+				" WG12232L3          ",
+				#endif
+				"                    ");
+	int2lcdyx(BUILD_YEAR,1,12,0);
+	int2lcdyx(BUILD_MONTH,1,15,0);
+	int2lcdyx(BUILD_DAY,1,18,0);
+	
+	sprintf(&lcd_buffer[9],"%d.%d.%d",HARDVARE_VERSION,SOFT_VERSION,BUILD);
+	}
+
 /*int2lcdyx(ad7705_res1,0,5,0);
 int2lcdyx(ad7705_res2,0,10,0);
 int2lcdyx(ad7705_buff_[0],1,5,0);
@@ -1324,13 +1345,13 @@ else if(ind==iMn)
 		if(but==butD)
 			{
 			sub_ind++;
-			gran_ring_char(&sub_ind,0,4);
+			gran_ring_char(&sub_ind,0,5);
 			//suz_temp=1;
 			}
 		else if(but==butU)
 			{
 			sub_ind--;
-			gran_ring_char(&sub_ind,0,4);
+			gran_ring_char(&sub_ind,0,5);
 			}
 
 		else if(sub_ind==0)
@@ -1414,7 +1435,14 @@ else if(ind==iMn)
 	     	lc640_write_int(EE_REST,REST);
 	     	speed=0;
 			}
-		else if(sub_ind==3)
+		else if(sub_ind==3) 
+			{
+			if(but==butE)
+		     	{
+		     	tree_up(iFWabout,0,0,0);
+		     	}
+			}
+		else if(sub_ind==4)
 			{
 			if(auto_bl_kb==stON&&count_but_idle>=1000&&but)
 				{
@@ -1428,7 +1456,7 @@ else if(ind==iMn)
 			tree_up(iSet_prl,0,0,0);
 			}
 			}
-		else if(sub_ind==4)
+		else if(sub_ind==5)
 			{
 			if(auto_bl_kb==stON&&count_but_idle>=1000&&but)
 				{
@@ -2169,6 +2197,15 @@ else if(ind==iSTOP_umin1)
 else if(ind==iSTOP_umin2)
 	{
 	tree_down(0,0);
+	}
+else if(ind==iFWabout)
+	{
+	ret(1000);
+	if(but==butE)
+	     {
+	     tree_down(0,0);
+	     ret(0);
+	     }
 	}
 
 if(MNEMO_ON)mnemo_cnt=MNEMO_ON;

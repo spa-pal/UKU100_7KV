@@ -156,7 +156,8 @@ enum {iMn,iSrv_sl,iNet,iSet,iPr,iSrc,iS2,iSet_prl,iK_prl,iDnd,iABl_kb,iABl_kb_pr
 	iPrl_bat_in_out,iPdp1,iDef_set,iSM,iJAv_net,iJAv_src1,
 	iJAv_src2,iJAv_bat,iJAv_bat_sel,iAusw,iAusw_prl,iAusw_set,iK_t_out,
 	iJ_bat_ke_sel,iJ_bat_ke,iJ_bat_vz_sel,iJ_bat_vz,iJ_bat_wrk_sel,iJ_bat_wrk,
-	iExt_set,iExt_dt,iExt_sk,iAvz,iJAv_src1_sel,iJAv_src2_sel,iSTOP_umin2,iSTOP_umin1}i;
+	iExt_set,iExt_dt,iExt_sk,iAvz,iJAv_src1_sel,iJAv_src2_sel,iSTOP_umin2,iSTOP_umin1,
+	iFWabout}i;
 
 signed char s_i;
 signed char s_i1;
